@@ -4,3 +4,5 @@
 #custom command for my project
 vu() { cd "/home/bineet/workspace/Vuevent" ; cd "vuevents"; }
 ve() { cd "/home/bineet/workspace/vevent" ; }
+
+
