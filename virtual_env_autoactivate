@@ -1,0 +1,12 @@
+# Automatically activate virtual environment while changing directories.
+
+function cd {
+    
+    builtin cd "$@"
+	if [ -d "venv" ] ; then
+		if which deactivate > /dev/null; then
+			:
+		fi
+	source venv/bin/activate
+    fi
+}
