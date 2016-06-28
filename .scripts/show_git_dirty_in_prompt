@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Show your git dirty status + current git branch on your prompt.
 
 # example:
