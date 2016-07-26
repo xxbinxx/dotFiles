@@ -68,6 +68,9 @@ function set_prompt() {
     fi
 
     export PS1="${myuser}${path}${venv}${branch} ${end}"
+
+    # Change gnome-terminal title to reflect the current directory
+    echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD}\007"
 }
 
 export PROMPT_COMMAND=set_prompt
