@@ -1,15 +1,19 @@
-. ~/.scripts/virtual_env_autoactivate
-. ~/.scripts/show_git_dirty_in_prompt
-. ~/.scripts/change_prompt_view
 
-#custom command for my projects
-vu() { cd "/home/bineet/workspace/Vuevent/vuevents"; workon vuevent; }
-ve() { cd "/home/bineet/workspace/vevent" ; workon vevent; }
-mm() {  echo makemigrations migrate | xargs -n 1 python manage.py ;}
+if [ -f ~/dotfiles/virtual_env_autoactivate ]; then
+    source ~/dotfiles/virtual_env_autoactivate
+fi
 
-# virtualenv
-export WORKON_HOME=~/virtualenvs
-source /usr/local/bin/virtualenvwrapper.sh
+if [ -f ~/dotfiles/show_git_dirty_in_prompt ]; then
+    source ~/dotfiles/show_git_dirty_in_prompt
+fi
+
+#if [ -f change_prompt_view ]; then
+    #. change_prompt_view
+#fi
+
+if [ -f ~/dotfiles/bash_aliases ]; then
+    source ~/dotfiles/bash_aliases
+fi
 
 # Make new shells get the history lines from all previous
 # shells instead of the default "last window closed" history
@@ -26,7 +30,7 @@ export HISTSIZE=10000
 # Don't clear the screen after quitting a manual page
 export MANPAGER="less -X"
 
-# Make vim the default editor
+# Make vim the default editor1
 export EDITOR="vim"
 
 # Ignore duplicate commands in the history
