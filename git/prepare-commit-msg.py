@@ -71,7 +71,7 @@ if not prefix or not issue_number:
     print("\n\n****************************************************",
           "\nPLEASE export ISSUE_PREFIX and ISSUE_NUMBER (in uppercase)"
           " to get the auto prefix working."
-          "\n**************************************************\n\n")
+          "\n**************************************************\n")
     print("\n example: \t\t$ export ISSUE_PREFIX=LIN "
           "\n\t\t $ export ISSUE_NUMBER=04 \n\n")
 else:
