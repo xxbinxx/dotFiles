@@ -82,5 +82,6 @@ else:
         # Don't prepend if Merge branch or prefix is already there.
         if not content.startswith(commit_prefix) \
            and content.startswith('Merge'):
+            print("Commit message prefixed with: %s" % commit_prefix)
             f.seek(0, 0)
             f.write("{0}{1}".format(commit_prefix, content))
