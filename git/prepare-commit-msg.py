@@ -72,7 +72,8 @@ if not prefix or not issue_number:
           "\nPLEASE export ISSUE_PREFIX and ISSUE_NUMBER (in uppercase)"
           " to get the auto prefix working."
           "\n**************************************************\n\n")
-    print("\n example: $ export ISSUE_PREFIX=LIN \n $ export ISSUE_NUMBER=04 ")
+    print("\n example: \t\t$ export ISSUE_PREFIX=LIN "
+          "\n\t\t $ export ISSUE_NUMBER=04 \n\n")
 else:
     with open(commit_msg_filepath, 'r+') as f:
         content = f.read()
