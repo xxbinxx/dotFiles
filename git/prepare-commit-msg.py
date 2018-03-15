@@ -68,12 +68,12 @@ prefix = os.environ.get('ISSUE_PREFIX')
 issue_number = os.environ.get('ISSUE_NUMBER')
 
 if not prefix or not issue_number:
-    print("\n\n****************************************************",
+    print("\n\n****************************************************"
           "\nPLEASE export ISSUE_PREFIX and ISSUE_NUMBER (in uppercase)"
           " to get the auto prefix working."
-          "\n**************************************************\n")
-    print("\n example: \t\t$ export ISSUE_PREFIX=LIN "
-          "\n\t\t $ export ISSUE_NUMBER=04 \n\n")
+          "\n****************************************************\n"
+          "\n example: \n\t\t$ export ISSUE_PREFIX=LIN "
+          "\n\t\t$ export ISSUE_NUMBER=04 \n\n")
 else:
     with open(commit_msg_filepath, 'r+') as f:
         content = f.read()
