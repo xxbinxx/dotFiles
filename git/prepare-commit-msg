@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 
 """
+GIT hook to prefix JIRA issue number in commit messages.
+
 modified to personal usage:
 original source: https://www.atlassian.com/git/tutorials/git-hooks
 
@@ -22,6 +24,10 @@ Imp info:
     or --amend option was given.
 
     As with pre-commit, exiting with a non-zero status aborts the commit.
+
+
+    **NOTE** (drawback):
+      only works after setting GIT_PREFIX and ISSUE_NUMBER environ variables.
 """
 
 import sys
