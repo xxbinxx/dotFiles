@@ -27,7 +27,7 @@ Imp info:
 
 
     **NOTE** (drawback):
-      only works after setting GIT_PREFIX and ISSUE_NUMBER environ variables.
+      only works after setting ISSUE_PREFIX and ISSUE_NUMBER environ variables.
 """
 
 import sys
@@ -64,14 +64,15 @@ print("prepare-commit-msg: On branch '%s'" % branch)
 # result = re.match('issue-(.*)', branch)
 # issue_number = result.group(1)
 
-prefix = os.environ.get('GIT_PREFIX')
+prefix = os.environ.get('ISSUE_PREFIX')
 issue_number = os.environ.get('ISSUE_NUMBER')
 
 if not prefix or not issue_number:
     print("\n\n****************************************************",
-          "\nPLEASE export GIT_PREFIX and ISSUE_NUMBER (in uppercase) to get "
-          "the auto prefix working."
+          "\nPLEASE export ISSUE_PREFIX and ISSUE_NUMBER (in uppercase)"
+          " to get the auto prefix working."
           "\n**************************************************\n\n")
+    print("\n example: $ export ISSUE_PREFIX=LIN \n $ export ISSUE_NUMBER=04 ")
 else:
     with open(commit_msg_filepath, 'r+') as f:
         content = f.read()
