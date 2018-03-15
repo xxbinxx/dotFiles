@@ -75,13 +75,8 @@ if not prefix or not issue_number:
           "\n example: \n\t\t$ export ISSUE_PREFIX=LIN "
           "\n\t\t$ export ISSUE_NUMBER=04 \n\n")
 else:
-    commit_prefix = "{0}-{1}: ".format(prefix, issue_number)
     with open(commit_msg_filepath, 'r+') as f:
         content = f.read()
-
-        # Don't prepend if Merge branch or prefix is already there.
-        if not content.startswith(commit_prefix) \
-           and content.startswith('Merge'):
-            print("Commit message prefixed with: %s" % commit_prefix)
+        if not content.startswith('Merge') and not content.startswith(prefix):
             f.seek(0, 0)
-            f.write("{0}{1}".format(commit_prefix, content))
+            f.write("{0}-{1}: {2}".format(prefix, issue_number, content))
