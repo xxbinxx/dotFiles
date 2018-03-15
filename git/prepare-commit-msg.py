@@ -78,4 +78,4 @@ else:
     with open(commit_msg_filepath, 'r+') as f:
         content = f.read()
         f.seek(0, 0)
-        f.write("{0}-{1} {2}".format(prefix, issue_number, content))
+        f.write("{0}-{1}: {2}".format(prefix, issue_number, content))
