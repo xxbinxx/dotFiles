@@ -27,7 +27,8 @@ Imp info:
 
 
     **NOTE** (drawback):
-      only works after setting ISSUE_PREFIX and ISSUE_NUMBER environ variables.
+      - only works after setting ISSUE_PREFIX and ISSUE_NUMBER environ variables.
+      - is unable to abort commit.
 """
 
 import sys
